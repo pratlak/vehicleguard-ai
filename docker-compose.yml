@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: vehicleguard
+      POSTGRES_USER: vehicleguard
+      POSTGRES_PASSWORD: vehicleguard123
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vehicleguard -d vehicleguard"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rates-service:
+    build: ./rates-service
+    ports:
+      - "8081:8081"
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/vehicleguard
+      DB_USER: vehicleguard
+      DB_PASSWORD: vehicleguard123
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8081/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  risk-engine:
+    build: ./risk-engine
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/vehicleguard
+      DB_USER: vehicleguard
+      DB_PASSWORD: vehicleguard123
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      RATES_SERVICE_URL: http://rates-service:8081
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rates-service:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - risk-engine
+
+volumes:
+  pgdata:
