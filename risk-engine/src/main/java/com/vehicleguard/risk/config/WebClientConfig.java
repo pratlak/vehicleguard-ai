@@ -45,7 +45,11 @@ public class WebClientConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000", "http://frontend:3000")
+                        .allowedOrigins(
+                                "http://localhost:3000",
+                                "http://frontend:3000",
+                                "https://dhr91rzgdav9i.cloudfront.net"
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
