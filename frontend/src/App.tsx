@@ -22,17 +22,17 @@ const App: React.FC = () => {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Header style={{ display: 'flex', alignItems: 'center', background: '#001529', padding: '0 24px' }}>
-        <Space align="center">
-          <SafetyOutlined style={{ fontSize: 24, color: '#1677ff' }} />
-          <Title level={4} style={{ color: 'white', margin: 0 }}>
-            VehicleGuard AI
-          </Title>
-        </Space>
-        <span style={{ color: '#8c8c8c', marginLeft: 16, fontSize: 14 }}>
-          Intelligent Vehicle Insurance Risk Assessment
-        </span>
-      </Header>
+        <Header style={{ display: 'flex', alignItems: 'center', background: '#001529', padding: '0 24px', flexWrap: 'wrap', height: 'auto', minHeight: 64 }}>
+            <Space align="center">
+                <SafetyOutlined style={{ fontSize: 24, color: '#1677ff' }} />
+                <Title level={4} style={{ color: 'white', margin: 0, whiteSpace: 'nowrap' }}>
+                    VehicleGuard AI
+                </Title>
+            </Space>
+            <span style={{ color: '#8c8c8c', marginLeft: 16, fontSize: 14, whiteSpace: 'nowrap' }}>
+    Intelligent Vehicle Insurance Risk Assessment
+  </span>
+        </Header>
 
       <Content style={{ padding: '24px', background: '#f5f5f5' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
