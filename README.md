@@ -25,6 +25,18 @@ Try it with these sample inputs:
 - Coverage: Full
 - ZIP: 98004
 
+## Screenshots
+
+### Quote Form
+![Quote Form](docs/screenshots/quote-form.png)
+
+### Quote Results
+![Quote Results](docs/screenshots/quote-results.png)
+
+### AI Chatbot
+![Chatbot](docs/screenshots/chatbot1.png)
+
+![Chatbot](docs/screenshots/chatbot2.png)
 ---
 
 ## Built With BMAD
