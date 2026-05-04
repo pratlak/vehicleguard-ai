@@ -25,3 +25,4 @@ replay_pid*
 .env
 .env
 *.pkg
+.DS_Store
