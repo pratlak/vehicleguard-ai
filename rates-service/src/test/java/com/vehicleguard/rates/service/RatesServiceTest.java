@@ -32,14 +32,14 @@ class RatesServiceTest {
     @BeforeEach
     void setUp() {
         sedanRate = VehicleBaseRate.builder()
-                .id(1L)
+                .id(1)
                 .vehicleCategory("sedan")
                 .baseAnnualPremium(new BigDecimal("1100.00"))
                 .description("Standard sedan")
                 .build();
 
         sportsRate = VehicleBaseRate.builder()
-                .id(4L)
+                .id(4)
                 .vehicleCategory("sports")
                 .baseAnnualPremium(new BigDecimal("1800.00"))
                 .description("Sports car")

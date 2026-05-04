@@ -1,0 +1,8 @@
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/controller/RatesController.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/model/entity/VehicleBaseRate.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/exception/RatesNotFoundException.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/model/dto/RatesResponse.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/RatesServiceApplication.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/exception/GlobalExceptionHandler.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/repository/VehicleBaseRateRepository.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/rates-service/src/main/java/com/vehicleguard/rates/service/RatesService.java

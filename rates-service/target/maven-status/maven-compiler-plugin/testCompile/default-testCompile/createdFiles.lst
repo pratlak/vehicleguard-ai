@@ -1,0 +1,4 @@
+com/vehicleguard/rates/controller/RatesControllerTest.class
+com/vehicleguard/rates/service/RatesServiceTest.class
+com/vehicleguard/rates/integration/AbstractIntegrationTest.class
+com/vehicleguard/rates/integration/RatesServiceIntegrationTest.class

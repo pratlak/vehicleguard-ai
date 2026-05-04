@@ -1,0 +1,9 @@
+com/vehicleguard/risk/controller/ChatControllerTest.class
+com/vehicleguard/risk/service/AIExplanationServiceTest.class
+com/vehicleguard/risk/integration/AbstractIntegrationTest.class
+com/vehicleguard/risk/repository/QuoteRepositoryTest.class
+com/vehicleguard/risk/integration/ChatbotIntegrationTest.class
+com/vehicleguard/risk/service/ChatbotServiceTest.class
+com/vehicleguard/risk/service/RiskScoringServiceTest.class
+com/vehicleguard/risk/integration/RiskAssessmentIntegrationTest.class
+com/vehicleguard/risk/controller/RiskControllerTest.class

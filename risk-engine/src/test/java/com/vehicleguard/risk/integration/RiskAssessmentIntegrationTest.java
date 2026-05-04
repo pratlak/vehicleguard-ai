@@ -51,9 +51,9 @@ class RiskAssessmentIntegrationTest extends AbstractIntegrationTest {
         WebClient.RequestHeadersSpec requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
         WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
 
-        when(ratesWebClient.get()).thenReturn(requestHeadersUriSpec);
-        when(requestHeadersUriSpec.uri(any(Function.class))).thenReturn(requestHeadersSpec);
-        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        doReturn(requestHeadersUriSpec).when(ratesWebClient).get();
+        doReturn(requestHeadersSpec).when(requestHeadersUriSpec).uri(org.mockito.ArgumentMatchers.any(Function.class));
+        doReturn(responseSpec).when(requestHeadersSpec).retrieve();
         when(responseSpec.bodyToMono(Map.class))
                 .thenReturn(Mono.just(Map.of("baseAnnualPremium", 1800.0, "vehicleCategory", "sports")));
 
@@ -74,7 +74,7 @@ class RiskAssessmentIntegrationTest extends AbstractIntegrationTest {
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.riskScore", notNullValue()))
                 .andExpect(jsonPath("$.riskTier", not(emptyString())))
-                .andExpect(jsonPath("$.annualPremiumUsd", greaterThan(0)))
+                .andExpect(jsonPath("$.annualPremiumUsd", greaterThan(0.0)))
                 .andExpect(jsonPath("$.appliedFactors", not(empty())))
                 .andExpect(jsonPath("$.aiExplanation", notNullValue()))
                 .andReturn();
@@ -135,7 +135,7 @@ class RiskAssessmentIntegrationTest extends AbstractIntegrationTest {
     @Test
     void assess_lowRiskDriver_returnsLowTier() throws Exception {
         // age=35, sedan, no violations, no accidents -> no score impact -> LOW
-        when(ratesWebClient.get()).thenReturn(mockGetForBaseRate(1100.0));
+        doReturn(mockGetForBaseRate(1100.0)).when(ratesWebClient).get();
 
         AssessRequest request = AssessRequest.builder()
                 .driverAge(35).licenseYears(12).violationsLast5Yr(0).accidentsLast5Yr(0)
@@ -157,9 +157,9 @@ class RiskAssessmentIntegrationTest extends AbstractIntegrationTest {
         WebClient.RequestHeadersUriSpec spec = mock(WebClient.RequestHeadersUriSpec.class);
         WebClient.RequestHeadersSpec hSpec = mock(WebClient.RequestHeadersSpec.class);
         WebClient.ResponseSpec rSpec = mock(WebClient.ResponseSpec.class);
-        when(ratesWebClient.get()).thenReturn(spec);
-        when(spec.uri(any(Function.class))).thenReturn(hSpec);
-        when(hSpec.retrieve()).thenReturn(rSpec);
+        doReturn(spec).when(ratesWebClient).get();
+        doReturn(hSpec).when(spec).uri(org.mockito.ArgumentMatchers.any(Function.class));
+        doReturn(rSpec).when(hSpec).retrieve();
         when(rSpec.bodyToMono(Map.class)).thenReturn(Mono.just(Map.of("baseAnnualPremium", 1800.0)));
 
         AssessRequest request = AssessRequest.builder()
@@ -193,8 +193,8 @@ class RiskAssessmentIntegrationTest extends AbstractIntegrationTest {
         WebClient.RequestHeadersUriSpec spec = mock(WebClient.RequestHeadersUriSpec.class);
         WebClient.RequestHeadersSpec hSpec = mock(WebClient.RequestHeadersSpec.class);
         WebClient.ResponseSpec rSpec = mock(WebClient.ResponseSpec.class);
-        when(spec.uri(any(Function.class))).thenReturn(hSpec);
-        when(hSpec.retrieve()).thenReturn(rSpec);
+        doReturn(hSpec).when(spec).uri(org.mockito.ArgumentMatchers.any(Function.class));
+        doReturn(rSpec).when(hSpec).retrieve();
         when(rSpec.bodyToMono(Map.class)).thenReturn(Mono.just(Map.of("baseAnnualPremium", rate)));
         return spec;
     }

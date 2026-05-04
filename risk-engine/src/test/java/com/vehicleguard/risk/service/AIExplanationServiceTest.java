@@ -38,7 +38,7 @@ class AIExplanationServiceTest {
     private void setupSuccessfulMock(Map<String, Object> apiResponse) {
         when(anthropicWebClient.post()).thenReturn(uriSpec);
         when(uriSpec.uri(anyString())).thenReturn(bodySpec);
-        when(bodySpec.bodyValue(any())).thenReturn(bodySpec);
+        doReturn(bodySpec).when(bodySpec).bodyValue(any());
         when(bodySpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.bodyToMono(any(Class.class))).thenReturn(Mono.just(apiResponse));
     }
@@ -47,7 +47,7 @@ class AIExplanationServiceTest {
     private void setupErrorMock(Throwable error) {
         when(anthropicWebClient.post()).thenReturn(uriSpec);
         when(uriSpec.uri(anyString())).thenReturn(bodySpec);
-        when(bodySpec.bodyValue(any())).thenReturn(bodySpec);
+        doReturn(bodySpec).when(bodySpec).bodyValue(any());
         when(bodySpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.bodyToMono(any(Class.class))).thenReturn(Mono.error(error));
     }
@@ -68,7 +68,7 @@ class AIExplanationServiceTest {
     void callClaudeAPI_emptyResponse_throwsAIServiceException() {
         when(anthropicWebClient.post()).thenReturn(uriSpec);
         when(uriSpec.uri(anyString())).thenReturn(bodySpec);
-        when(bodySpec.bodyValue(any())).thenReturn(bodySpec);
+        doReturn(bodySpec).when(bodySpec).bodyValue(any());
         when(bodySpec.retrieve()).thenReturn(responseSpec);
         //noinspection unchecked
         when(responseSpec.bodyToMono(any(Class.class))).thenReturn(Mono.empty());

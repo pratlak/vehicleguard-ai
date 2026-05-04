@@ -1,0 +1,10 @@
+com/vehicleguard/rates/repository/VehicleBaseRateRepository.class
+com/vehicleguard/rates/model/dto/RatesResponse$RatesResponseBuilder.class
+com/vehicleguard/rates/model/entity/VehicleBaseRate$VehicleBaseRateBuilder.class
+com/vehicleguard/rates/service/RatesService.class
+com/vehicleguard/rates/RatesServiceApplication.class
+com/vehicleguard/rates/model/dto/RatesResponse.class
+com/vehicleguard/rates/exception/GlobalExceptionHandler.class
+com/vehicleguard/rates/controller/RatesController.class
+com/vehicleguard/rates/exception/RatesNotFoundException.class
+com/vehicleguard/rates/model/entity/VehicleBaseRate.class

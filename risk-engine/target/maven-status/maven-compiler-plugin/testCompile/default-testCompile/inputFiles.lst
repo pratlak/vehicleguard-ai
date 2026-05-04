@@ -1,0 +1,9 @@
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/integration/AbstractIntegrationTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/service/RiskScoringServiceTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/controller/RiskControllerTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/repository/QuoteRepositoryTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/service/AIExplanationServiceTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/controller/ChatControllerTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/integration/RiskAssessmentIntegrationTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/integration/ChatbotIntegrationTest.java
+/Users/kulfi/Desktop/Insurance-project/vehicleguard-ai/risk-engine/src/test/java/com/vehicleguard/risk/service/ChatbotServiceTest.java
