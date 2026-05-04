@@ -97,6 +97,9 @@ jobs:
         run: mvn test -B -Dtest="RiskAssessmentIntegrationTest,ChatbotIntegrationTest"
         env:
           ANTHROPIC_API_KEY: test-key
+          DB_URL: jdbc:postgresql://localhost:5432/vehicleguard_test
+          DB_USER: vehicleguard
+          DB_PASSWORD: vehicleguard123
 
       - name: Upload risk-engine test results
         if: always()
