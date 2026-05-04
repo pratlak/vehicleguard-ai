@@ -1,4 +1,5 @@
 # VehicleGuard AI 🚗
+![CI](https://github.com/pratlak/vehicleguard-ai/actions/workflows/pipeline.yml/badge.svg)
 
 > AI-powered vehicle insurance risk assessment platform built using the BMAD (Breakthrough Method of Agile AI-Driven Development) approach.
 
