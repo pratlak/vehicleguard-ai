@@ -137,9 +137,9 @@
 | 73 | Generated BMAD process log (this doc) | ✅ Done |
 | 74 | Generated master-prompt.md | ✅ Done |
 | 75 | Generated prompt-engineering.md | ✅ Done |
-| 76 | Fix unit tests | ⏳ Pending |
-| 77 | Fix GitHub Actions pipeline | ⏳ Pending |
-| 78 | Take demo screenshots | ⏳ Pending |
+| 76 | Fix unit tests | ✅ Done  |
+| 77 | Fix GitHub Actions pipeline | ✅ Done |
+| 78 | Take demo screenshots | ✅ Done  |
 
 ---
 
