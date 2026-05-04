@@ -27,3 +27,4 @@ replay_pid*
 *.pkg
 .DS_Store
 .idea/
+global-bundle.pem
